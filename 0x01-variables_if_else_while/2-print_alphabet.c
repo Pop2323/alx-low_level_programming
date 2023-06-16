@@ -3,19 +3,20 @@
 /**
  * main - Entry point
  *
- * Title: a program that prints all the numbers of base 16 in lowercase
+ * Title: print alphabet using putchar in lowercase
  *
  * Return: return 0
 */
 
 int main(void)
 {
-	int i;
+	char alph;
 
-	for (i = 0; i < 10; i++)
-		putchar('0' + i)
-	for (i = 0; i < 6; i++)
-		putchar('a' + i);
-	putchar('\n');
+	for (alph = 'a' ; alph <= 'z' ; alph++)
+	{
+		putchar(alph);
+	}
+	putchar ('\n');
+
 	return (0);
 }
