@@ -11,8 +11,8 @@ void times_table(void)
 
 	for (row = 0; row <= 9; row++)
 	{
-		_putchar(48);
-		for (col = 0; col <= 9; col++)
+		_putchar('0');
+		for (col = 1; col <= 9; col++)
 		{
 			_putchar(',');
 			_putchar(' ');
@@ -22,8 +22,8 @@ void times_table(void)
 			if (sum <= 9)
 				_putchar(' ');
 			else
-				_putchar((sum / 10) + 48);
-			_putchar((sum % 10) + 48);
+				_putchar((sum / 10) + '0');
+			_putchar((sum % 10) + '0');
 		}
 		_putchar('\n');
 	}
