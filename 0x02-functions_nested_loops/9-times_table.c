@@ -16,7 +16,7 @@ void times_table(void)
 			_putchar(',');
 			_putchar(' ');
 
-			sum = row * col;
+			int sum = row * col;
 			if (sum <= 9)
 				_putchar(' ');
 			else
