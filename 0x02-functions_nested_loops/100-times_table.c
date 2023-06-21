@@ -22,13 +22,15 @@ void print_times_table(int n)
 
 				sum = i * j;
 
-				if (sum <= 9 && sum <= 99)
+				if (sum <= 9)
+					_putchar(' ');
+				if (sum <= 99)
 					_putchar(' ');
 				if (sum >= 100)
 				{
 					_putchar((sum / 100) + '0');
 					_putchar((sum % 10) % 10 + '0');
-				} else if (sum <= 99 && sum >- 10)
+				} else if (sum <= 99 && sum >= 10)
 					_putchar((sum / 10) + '0');
 				_putchar((sum % 10) + '0');
 			}
