@@ -10,14 +10,12 @@
 
 int main(void)
 {
-	unsigned long one = 0;
-	unsigned long two = 1;
-	unsigned long next;
+	unsigned long one = 0, two = 1, next;
 	int i;
 
 	for (i = 0; i < 50; i++)
 	{
-		next = one * two;
+		next = one + two;
 		printf("%lu", next);
 
 		one = two;
