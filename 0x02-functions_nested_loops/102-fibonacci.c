@@ -23,7 +23,7 @@ int main(void)
 		one = two;
 		two = next;
 
-		if (next == 49)
+		if (i == 49)
 			printf("\n");
 		else
 			printf(", ");
