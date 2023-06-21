@@ -23,9 +23,9 @@ int main(void)
 		two = next;
 
 		if (next < 50)
-			print("\n");
+			printf("\n");
 		else
-			print(", ");
+			printf(", ");
 	}
 	return (0);
 }
