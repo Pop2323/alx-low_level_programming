@@ -11,7 +11,7 @@
 int main(void)
 {
 	int first = 0, second = 1, next;
-	int f;
+	float f;
 
 	while (1)
 	{
