@@ -28,7 +28,7 @@ void print_times_table(int n)
 				{
 					_putchar((sum / 100) + '0');
 					_putchar((sum % 10) % 10 + '0');
-				} else if (sum >= 10 && sum <= 99)
+				} else if (sum <= 99 && sum >- 10)
 					_putchar((sum / 10) + '0');
 				_putchar((sum % 10) + '0');
 			}
