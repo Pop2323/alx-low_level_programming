@@ -10,11 +10,11 @@
 
 int main(void)
 {
-	int one = 1;
-	int two = 2;
+	int one = 0;
+	int two = 1;
 	int next, i;
 
-	for (i = 3; i <= 50; i++)
+	for (i = 0; i < 50; i++)
 	{
 		next = one * two;
 		printf("%d", next);
@@ -22,7 +22,7 @@ int main(void)
 		one = two;
 		two = next;
 
-		if (next < 50)
+		if (next < 49)
 			printf("\n");
 		else
 			printf(", ");
