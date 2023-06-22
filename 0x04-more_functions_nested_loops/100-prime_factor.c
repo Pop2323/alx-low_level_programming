@@ -23,7 +23,7 @@ unsigned long long largest_prime_factor(unsigned long long n)
 		}
 	}
 	return n;
-
+}
 
 int main()
 {
