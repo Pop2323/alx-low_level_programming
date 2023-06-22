@@ -8,13 +8,13 @@
 
 void print_most_numbers(void)
 {
-	int n;
+	int num;
 
-	for (n = 0; n <= 9; n++)
+	for (num = 0; num <= 9; num++)
 	{
-		if (n == 2 || n == 4)
+		if (num == 2 || num == 4)
 			continue;
-		_putchar(48 + n);
+		_putchar(num + 48);
 	}
 	_putchar('\n');
 }
