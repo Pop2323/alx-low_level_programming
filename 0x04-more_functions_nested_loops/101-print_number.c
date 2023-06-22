@@ -10,14 +10,14 @@
 
 void print_number(int n)
 {
+	unsigned int calc = n
+
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		calc = -calc;
 	}
-	if (n >= 10)
-	{
-		print_number(n / 10);
-	}
-	_putchar('0' + (n % 10));
+	if ((calc / 10) > 0)
+		print_number(calc / 10);
+	_putchar((calc % 10) % 48);
 }
