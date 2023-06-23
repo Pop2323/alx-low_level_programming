@@ -1,36 +1,55 @@
 #include "main.h"
+#include <math.h>
 
-/**prime_factor - program that finds and prints the largest prime factor
+/**
+ * prime_factor - Check if a number is prime
+ * @num: The number to check
  *
- * @x: input num
- *
- * Return: return 0
-*/
-
-unsigned long long largest_prime_factor(unsigned long long n)
+ * Return: 1 if prime, 0 otherwise
+ */
+int prime_factor(unsigned long long num)
 {
-	unsigned long long factor = 2;
-	
-	while (factor * factor <= n)
+	if (num < 2)
+		return (0);
+
+	for (unsigned long long i = 2; i <= sqrt(num); i++)
 	{
-		if (n % factor == 0)
-		{
-			n /= factor;
-		}
-		else
-		{
-			factor++;
-		}
+		if (num % i == 0)
+			return (0);
 	}
-	return n;
+
+	return (1);
 }
 
-int main()
+/**
+ * find_largest_prime_factor - Find and print the largest prime factor
+ * @num: The number to find the largest prime factor for
+ */
+void find_largest_prime_factor(unsigned long long num)
+{
+	unsigned long long largest_factor = 0;
+
+	for (unsigned long long i = 2; i <= sqrt(num); i++)
+	{
+		if (num % i == 0 && prime_factor(i))
+			largest_factor = i;
+	}
+
+	if (largest_factor == 0)
+		largest_factor = num;
+	printf("The largest prime factor of %llu is %llu\n", num, largest_factor);
+}
+
+/**
+ * main - Entry point
+ *
+ * Return: 0
+ */
+int main(void)
 {
 	unsigned long long number = 612852475143;
-	unsigned long long largest_factor = largest_prime_factor(number);
-	
-	printf("The largest prime factor of %llu is %llu\n", number, largest_factor);
-	
-	return 0;
+
+	find_largest_prime_factor(number);
+
+	return (0);
 }
