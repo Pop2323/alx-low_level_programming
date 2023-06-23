@@ -2,7 +2,6 @@
 #define MAIN_H
 
 #include <stdio.h>
-#include <math.h>
 
 int _putchar(char c);
 int _isupper(int c);
