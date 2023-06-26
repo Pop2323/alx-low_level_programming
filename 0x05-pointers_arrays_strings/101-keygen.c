@@ -17,7 +17,7 @@ int main(void)
 	while (calc <= 2654)
 	{
 		calc = calc + str;
-		putchar(str)
+		putchar(str);
 	}
 	putchar(2772 - calc);
 	return (0);
