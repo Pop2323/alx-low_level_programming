@@ -1,0 +1,31 @@
+#include "main.h"
+
+/**
+ * *_strncat - function that concatenates two strings
+ *
+ * @dest: 1st pointer that is main
+ * @src: second pointer
+ * @n: bytes from src
+ *
+ * Return: dest
+*/
+
+char *_strncat(char *dest, const char *src, int n)
+{
+	int len = 0;
+	int i;
+
+    /* Find the end of the dest str*/
+	while (dest[len] != '\0')
+	{
+		len++;
+	}
+
+	for (i = 0; i < n && src[i] != '\0'; i++)
+	{
+		dest[len + i] = src[i];
+	}
+	dest[len + i] = '\0';
+
+	return (dest);
+}
