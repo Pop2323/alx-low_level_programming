@@ -48,7 +48,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		r[k] = (sum % 10) + '0';
 		
 		i--;
-		j++;
+		j--;
 		k++;
 	}
 	r[k] = '\0';
