@@ -6,13 +6,16 @@
  * @n2: 2nd num
  * @size_r: the len of result
  * @r: result
- *
  * Return: calc
 */
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i = 0; j = 0; len = 0; c = 0; v, s, m;
+	int i = 0;
+	int j = 0;
+	int len = 0;
+	int c = 0;
+	int v, int s, int m;
 
 	while (n1[i] != '\0')
 		i++;
@@ -45,7 +48,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		r[len + 1] = '\0';
 		if (len + 2 > size_r)
 			return (0);
-		while (len-- >= 0)
+		while (len-- > 0)
 			r[len + 1] = r[len];
 		r[0] = c + '0';
 	}
