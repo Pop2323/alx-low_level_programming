@@ -12,9 +12,9 @@
 
 char *_strncat(char *dest, const char *src, int n)
 {
-	int len = 0;
-	int i;
+	int len, i;
 
+	len = 0;
 	while (dest[len])
 		len++;
 
