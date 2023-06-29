@@ -15,7 +15,6 @@ char *_strncat(char *dest, const char *src, int n)
 	int len = 0;
 	int i;
 
-    /* Find the end of the dest str*/
 	while (dest[len] != '\0')
 	{
 		len++;
@@ -25,7 +24,6 @@ char *_strncat(char *dest, const char *src, int n)
 	{
 		dest[len + i] = src[i];
 	}
-	dest[len + i] = '\0';
 
 	return (dest);
 }
