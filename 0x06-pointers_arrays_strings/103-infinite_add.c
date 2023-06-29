@@ -1,5 +1,4 @@
 #include "main.h"
-#include <string.h>
 
 /**
  * *infinite_add - function that adds two numbers
@@ -34,7 +33,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		r[k] = sum % 10 + '0';
 		i--;
 		j--;
-		k--;
+		k++;
 	}
 	if (carry > 0)
 	{
