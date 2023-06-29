@@ -3,7 +3,9 @@
 /**
  * *cap_string - function that capitalizes all words of a string
  *
- * @str: string that will return
+ * lowercase - check the string upper case or lower case
+ *
+ * @s: string that will return
  * @ptr: pinter that will return
  *
  * Return: ptr
