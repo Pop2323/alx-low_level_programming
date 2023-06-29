@@ -1,47 +1,66 @@
 #include "main.h"
 
 /**
- * *cap_string - function that capitalizes all words of a string
+ * lowercase - checks if a character is lowercase
  *
- * lowercase - check the string upper case or lower case
+ * @c: character to check
  *
- * @s: string that will return
- * @ptr: pinter that will return
- *
- * Return: ptr
+ * Return: 1 if lowercase, 0 otherwise
 */
 
-int lowercase(char s)
+int lowercase(char c)
 {
-	return (s >= 97 && s <= 122);
+	return (c >= 97 && c <= 122);
 }
-int Separators(char s)
+
+/**
+ * Separators - checks if a character is a separator
+ *
+ * @c: character to check
+ *
+ * Return: 1 if separator, 0 otherwise
+*/
+
+int Separators(char c)
 {
 	int i = 0;
 	char sperate[] = " \t\n,.!?\"(){}";
 
 	for (i = 0; i < 12; i++)
-		if (s == sperate[i])
+		if (c == sperate[i])
 			return (1);
 	return (0);
 }
-char *cap_string(char *c)
+
+/**
+ * cap_string - function that capitalizes all words of a string
+ *
+ * @str: string to capitalize
+ *
+ * Return: pointer to the modified string
+*/
+
+char *cap_string(char *str)
 {
-	char *ptr = c;
+	char *ptr = str;
 	int checkSperator = 1;
 
-	while (*c)
+	if (lowercase(*str))
 	{
-		if (Separators(*c))
+		*str -= 32;
+	}
+	while (*str)
+	{
+		if (Separators(*str))
 			checkSperator = 1;
-		else if (lowercase(*c) && checkSperator)
+		else if (lowercase(*str) && checkSperator)
 		{
-			*c -= 32;
+			*str -= 32;
 			checkSperator = 0;
 		}
 		else
 			checkSperator = 0;
-		c++;
+		str++;
 	}
 	return (ptr);
 }
