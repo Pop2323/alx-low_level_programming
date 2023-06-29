@@ -12,19 +12,20 @@ char *rot13(char *str)
 {
 	char *ptr = str;
 	int i;
+	char encode[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char decode[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	for (i = 0; str[i] != '\0'; i++)
+	while (*str)
 	{
-		char c = str[i];
-
-		if ((c >= 'a' && c <= 'm') || (c >= 'A' && c <= 'M'))
+		for (i = 0; i <= 52; i++)
 		{
-			str[i] = c + 13;
+			if (*str == encode[i])
+			{
+				*str = decode[i];
+				break;
+			}
 		}
-		else if ((c >= 'n' && c <= 'z') || (c >= 'N' && c <= 'Z'))
-		{
-			str[i] = c - 13;
-		}
+		str++;
 	}
 	return (ptr);
 }
