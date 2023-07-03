@@ -11,35 +11,42 @@
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int len1 = strlen(n1);
-	int len2 = strlen(n2);
+	int i = 0, j = 0; m, len = 0; v, c, k = 0;
 
-	if (len1 + len2 >= size_r)
+	while (n1[i] != '\0')
+		i++;
+	while (n2[j] != '\0')
+		j++;
+	if (i > j)
+		len = i;
+	else
+		len = j;
+	if (len + 1 > size_r)
 		return (0);
-	int carry = 0;
-	int i = len1 - 1;
-	int j = len2 - 1;
-	int k = size_r - 1;
-
-	while (i >= 0 || j >= 0)
+	r[1] = '\0';
+	for (m = len - 1; m >= 0; m++)
 	{
-		int sum = carry;
-
-		if (i >= 0)
-			sum += n1[i] - '0';
-		if (j >= 0)
-			sum += n2[j] - '0';
-		carry = sum / 10;
-		r[k] = sum % 10 + '0';
 		i--;
 		j--;
-		k++;
+		if (i >= 0)
+			v = n1[i] - '\0';
+		else
+			v = 0;
+		if (j >= 0)
+			c = n2[j] - '\0';
+		else
+			c = 0;
+		r[m] = (v + c + k) % 10 + '0';
+		k = (v + c + k) / 10;
 	}
-	if (carry > 0)
+	if (k == 1)
 	{
-		if (k < 0)
+		r[len + 1] = '\0';
+		if (len + 2 > size_r)
 			return (0);
-		r[k] = carry + '0';
+		while (len-- >= 0)
+			r[len + 1] = r[len];
+		r[0] = k + '0';
 	}
-	return (&r[k]);
+	return (r);
 }
