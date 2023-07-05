@@ -18,12 +18,13 @@ int _sqrt_recursion_checker(int n, int start, int end)
 	}
 
 	int m = start + (end - start) / 2;
+	int sqr = m * m;
 
-	if (m * m == n)
+	if (sqr == n)
 	{
 		return (m);
 	}
-	else if (m * m < n)
+	else if (sqr < n)
 	{
 		return (_sqrt_recursion_checker(n, m + 1, end));
 	}
