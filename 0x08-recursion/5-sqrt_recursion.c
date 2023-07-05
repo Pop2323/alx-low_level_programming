@@ -12,8 +12,8 @@
 
 int _sqrt_recursion_checker(int n, int start, int end)
 {
-	int m;
-	int sqr;
+	long m;
+	long sqr;
 
 	if (start > end)
 	{
