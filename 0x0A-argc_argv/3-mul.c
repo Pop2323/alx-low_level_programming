@@ -12,16 +12,17 @@
 
 int main(int argc, char *argv[])
 {
-	if (argc != 3)
+	int calc;
+
+	if (argc == 3)
+	{
+		calc = atoi(argv[1]) * atoi(argv[2]);
+		printf("%d\n", calc);
+	}
+	else
 	{
 		printf("Error\n");
 		return (1);
 	}
-
-	int num1 = atoi(argv[1]);
-	int num2 = atoi(argv[2]);
-	int calc = num1 * num2;
-
-	printf("%d\n", calc);
 	return (0);
 }
