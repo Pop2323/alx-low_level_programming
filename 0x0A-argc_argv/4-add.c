@@ -24,11 +24,14 @@ int main(int argc, char *argv[])
 	}
 	calc = 0;
 
-	for (int i = 1; i < argc; i++)
+	int i;
+	int j;
+
+	for (i = 1; i < argc; i++)
 	{
 		c = argv[i];
 
-		for (int j = 0; c[j] != '\0'; j++)
+		for (j = 0; c[j] != '\0'; j++)
 		{
 			if (!isdigit(c[j]))
 			{
