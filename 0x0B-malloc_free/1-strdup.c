@@ -8,15 +8,17 @@
  * Return: return 0
 */
 
-char *_strdup(char *str)
+char *_strdup(const char *str)
 {
+	size_t len;
+	char *dup;
+
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-
-	size_t len = strlen(str);
-	char *dup = malloc((len + 1) * sizeof(char));
+	len = strlen(str);
+	*dup = malloc((len + 1) * sizeof(char));
 
 	if (dup == NULL)
 	{
