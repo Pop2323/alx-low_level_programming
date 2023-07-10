@@ -8,7 +8,7 @@
  * Return: return 0
 */
 
-char *_strdup(const char *str)
+char *_strdup(char *str)
 {
 	size_t len;
 	char *dup;
