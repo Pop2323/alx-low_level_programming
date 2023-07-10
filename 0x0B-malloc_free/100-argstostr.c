@@ -13,6 +13,7 @@ char *argstostr(int ac, char **av)
 {
 	int len = 0;
 	int i;
+	int p = 0;
 	char *res;
 
 	if (ac == 0 || av == NULL)
@@ -31,9 +32,6 @@ char *argstostr(int ac, char **av)
 	{
 		return (NULL);
 	}
-
-	int p = 0;
-
 	for (i = 0; i < ac; i++)
 	{
 		strcpy(res + p, av[i]);
