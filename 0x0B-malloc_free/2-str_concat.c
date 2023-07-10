@@ -9,7 +9,7 @@
  * Return: return
 */
 
-char *str_concat(const char *s1, const char *s2)
+char *str_concat(char *s1, char *s2)
 {
 	size_t len_1;
 	size_t len_2;
