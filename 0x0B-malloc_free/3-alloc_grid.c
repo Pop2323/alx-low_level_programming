@@ -41,26 +41,21 @@ int **alloc_grid(int width, int height)
 	return (ptr);
 }
 /**
- * print_grid - func that take 3 parameter
+ * free_grid - func that take 2 parameter
  * @grid: ptr to ptr
- * @width: integer
  * @height: integer
 */
-void print_grid(int **grid, int width, int height)
+void free_grid(int **grid, int height)
 {
-	int w;
-	int h;
-
-	h = 0;
-	while (h < height)
+	if (grid == NULL || height <= 0)
 	{
-		w = 0;
-		while (w < width)
-		{
-			printf("%d ", grid[h][w]);
-			w++;
-		}
-		printf("\n");
-		h++;
+		return;
 	}
+	int i;
+	
+	for (i = 0; i < height; i++)
+	{
+		free(grid[i]);
+	}
+	free(grid);
 }
