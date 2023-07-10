@@ -11,20 +11,21 @@
 
 char *argstostr(int ac, char **av)
 {
+	int len = 0;
+	int i;
+	char *res;
+
 	if (ac == 0 || av == NULL)
 	{
 		return (NULL);
 	}
-
-	int len = 0;
-	int i;
 
 	for (i = 0; i < ac; i++)
 	{
 		len += strlen(av[i]) + 1;
 	}
 
-	char *res = (char *)malloc(len * sizeof(char));
+	res = (char *)malloc(len * sizeof(char));
 
 	if (res == NULL)
 	{
