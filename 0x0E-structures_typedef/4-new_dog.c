@@ -4,6 +4,42 @@
 #include <string.h>
 
 /**
+ * check_len - func that checks the length of a string
+ *
+ * @str: char string that should be checked
+ *
+ * Return: return len
+*/
+
+int check_len(const char *str)
+{
+	int len;
+
+	for (len = 0; str[len] != '\0'; len++)
+		;
+	return (len);
+}
+
+/**
+ * copy_str - func that returns a copy of the destination from the source
+ *
+ * @source: string to be copied
+ * @destination: copy that is being copied to
+ *
+ * Return: return destination
+*/
+
+char *copy_str(char *source, char *destination)
+{
+	int i = 0;
+
+	for (; source[i]; i++)
+		destination[i] = source[i];
+	destination[i] = '\0';
+	return (destination);
+}
+
+/**
  * new_dog - function that creates a new dog
  *
  * @name: Ptr to a char representing the dog's name
@@ -15,28 +51,28 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	if (name == NULL || owner == NULL)
-	{
-		return (NULL);
-	}
+	dog_t *dog;
 
-	dog_t *newDog = (dog_t *)malloc(sizeof(dog_t));
-
-	if (newDog == NULL)
+	if (!name || age < 0 || !owner)
+		return (NULL);
+	dog = (dog_t *)malloc(sizeof(dog_t));
+	if (dog == NULL)
+		return (NULL);
+	dog->name = (char *)malloc(sizeof(char) * (check_len(name) + 1));
+	if (dog->name == NULL)
 	{
+		free(dog);
 		return (NULL);
 	}
-	newDog->name = (char *)malloc(strlen(name) + 1);
-	newDog->owner = (char *)malloc(strlen(owner) + 1);
-	if (newDog->name == NULL || newDog->owner == NULL)
+	dog->name = copy_str(name, dog->name);
+	dog->age = age;
+	dog->owner = (char *)malloc(sizeof(char) * (check_len(owner) + 1));
+	if (dog->owner == NULL)
 	{
-		free(newDog);
-		free(newDog->name);
-		free(newDog->owner);
+		free(dog->name);
+		free(dog);
 		return (NULL);
 	}
-	strcpy(newDog->name, name);
-	strcpy(newDog->owner, owner);
-	newDog->age = age;
-	return (newDog);
+	dog->owner = copy_str(owner, dog->owner);
+	return (dog);
 }
