@@ -21,13 +21,7 @@ int main(int argc, char *argv[])
 	num_b = atoi(argv[1]);
 	if (num_b < 0)
 		printf("Error\n"), exit(2);
-	while (num_b > 0)
-		printf("%02hhx", *main_ptr);
-	if (num_b > 1)
-		printf(" ");
-	else
-		printf("\n");
-	main_ptr++;
-	num_b--;
+	while (num_b--)
+		printf("%0hhx%s", *main_ptr, num_b ? " " : "\n");
 	return (0);
 }
