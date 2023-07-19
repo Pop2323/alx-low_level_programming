@@ -8,7 +8,6 @@
  *
  * Return: return the sum
 */
-
 int op_add(int a, int b)
 {
 	return (a + b);
@@ -22,7 +21,6 @@ int op_add(int a, int b)
  *
  * Return: return the difference
 */
-
 int op_sub(int a, int b)
 {
 	return (a - b);
@@ -36,7 +34,6 @@ int op_sub(int a, int b)
  *
  * Return: return the product
 */
-
 int op_mul(int a, int b)
 {
 	return (a * b);
@@ -50,7 +47,6 @@ int op_mul(int a, int b)
  *
  * Return: return the result of the division
 */
-
 int op_div(int a, int b)
 {
 	return (a / b);
