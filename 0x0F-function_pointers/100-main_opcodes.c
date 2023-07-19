@@ -22,9 +22,6 @@ int main(int argc, char *argv[])
 	if (num_b < 0)
 		printf("Error\n"), exit(2);
 	while (num_b--)
-	{
-		printf("%02hhx%s", *main_ptr, num_b ? " " : "\n");
-		main_ptr++;
-	}
+		printf("%02hhx%s", *main_ptr++, num_b ? " " : "\n");
 	return (0);
 }
