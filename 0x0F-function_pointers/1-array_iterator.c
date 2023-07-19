@@ -1,11 +1,13 @@
 #include "function_pointers.h"
 
 /**
- * array_iterator - func that executes a func given as a parameter on each element of an arr
+ * array_iterator - executes a func given as a parameter on each elem
  *
  * @array: intger arr
  * @size: the size of arr
  * @action: function_ptr
+ *
+ * Return: return void
 */
 
 void array_iterator(int *array, size_t size, void (*action)(int))
