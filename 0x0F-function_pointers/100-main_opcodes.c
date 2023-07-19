@@ -27,6 +27,5 @@ int main(int argc, char *argv[])
 		printf(" ");
 	else
 		printf("\n");
-	main_ptr++;
 	num_b--;
 }
