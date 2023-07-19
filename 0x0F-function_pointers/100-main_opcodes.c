@@ -12,7 +12,7 @@
 */
 
 int main(int argc, char *argv[])
-{i
+{
 	int num_b;
 	char *main_ptr = (char *)main;
 
