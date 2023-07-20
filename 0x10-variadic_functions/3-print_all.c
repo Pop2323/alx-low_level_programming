@@ -6,7 +6,7 @@
  * @separator: the str separator
  * @args: args ptr
 */
-void check_char(char *separator, va_list args)
+void format_char(char *separator, va_list args)
 {
 	printf("%s%c", separator, va_arg(args, int));
 }
@@ -17,7 +17,7 @@ void check_char(char *separator, va_list args)
  * @separator: the str separator
  * @args: args ptr
 */
-void check_int(char *separator, va_list args)
+void format_int(char *separator, va_list args)
 {
 	printf("%s%d", separator, va_arg(args, int));
 }
@@ -28,7 +28,7 @@ void check_int(char *separator, va_list args)
  * @separator: the str separator
  * @args: args ptr
 */
-void check_float(char *separator, va_list args)
+void format_float(char *separator, va_list args)
 {
 	printf("%s%f", separator, va_arg(args, double));
 }
@@ -39,7 +39,7 @@ void check_float(char *separator, va_list args)
  * @separator: the str separator
  * @args: args ptr
 */
-void check_str(char *separator, va_list args)
+void format_str(char *separator, va_list args)
 {
 	char *str = va_arg(args, char *);
 
@@ -63,12 +63,13 @@ void print_all(const char * const format, ...)
 	va_list args;
 
 	variadic_t variadics[] = {
-		{"c", check_char},
-		{"i", check_int},
-		{"f", check_float},
-		{"s", check_str},
+		{"c", format_char},
+		{"i", format_int},
+		{"f", format_float},
+		{"s", format_str},
 		{NULL, NULL}
 	};
+
 	va_start(args, format);
 	while (format && format[i])
 	{
