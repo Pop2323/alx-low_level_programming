@@ -44,6 +44,9 @@ void format_string(char *separator, va_list args)
 		str = "(nil)";
 		printf("%s%s", separator, str);
 		break;
+	default:
+		printf("%s%s", separator, str);
+		break;
 }
 
 /**
