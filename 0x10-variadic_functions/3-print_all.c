@@ -40,9 +40,12 @@ void format_string(char *separator, va_list args)
 	char *str = va_arg(args, char *);
 
 	switch ((int)(!str))
-	case 1:
-		str = "(nil)";
-		printf("%s%s", separator, str);
+	{
+		case 1:
+			str = "(nil)";
+			break;
+	}
+	printf("%s%s", separator, str);
 }
 
 /**
@@ -64,7 +67,6 @@ void print_all(const char * const format, ...)
 	};
 
 	va_start(args, format);
-
 	while (format && format[i])
 	{
 		j = 0;
