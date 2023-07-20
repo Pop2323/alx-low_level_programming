@@ -75,9 +75,9 @@ void print_all(const char * const format, ...)
 		j = 0;
 		while (variadics[j].variadic)
 		{
-			if (format[i] == variadics[i].variadic[0])
+			if (format[i] == variadics[j].variadic[0])
 			{
-				variadics[i].f(speratator, args);
+				variadics[j].f(speratator, args);
 				speratator = ", ";
 			}
 			j++;
