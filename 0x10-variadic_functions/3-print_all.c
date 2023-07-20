@@ -6,7 +6,7 @@
  * @separator: the str separator
  * @args: args ptr
 */
-void check_float(char *separator, va_list args)
+void check_char(char *separator, va_list args)
 {
 	printf("%s%s", separator, va_arg(args, int));
 }
