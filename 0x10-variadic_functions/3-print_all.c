@@ -59,11 +59,11 @@ void check_str(char *separator, va_list args)
 void print_all(const char * const format, ...)
 {
 	int i = 0, j;
-	char *speratator = "";
+	char *separator = "";
 	va_list args;
 
 	variadic_t variadics[] = {
-		{"c", check_float},
+		{"c", check_char},
 		{"i", check_int},
 		{"f", check_float},
 		{"s", check_str},
@@ -77,8 +77,8 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == variadics[j].variadic[0])
 			{
-				variadics[j].f(speratator, args);
-				speratator = ", ";
+				variadics[j].f(separator, args);
+				separator = ", ";
 			}
 			j++;
 		}
