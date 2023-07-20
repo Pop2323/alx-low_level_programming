@@ -46,7 +46,8 @@ void format_str(char *separator, va_list args)
 	switch ((int)(!str))
 		case 1:
 			str = "(nil)";
-			printf(("%s%s"), separator, str);
+
+	printf(("%s%s"), separator, str);
 }
 
 /**
