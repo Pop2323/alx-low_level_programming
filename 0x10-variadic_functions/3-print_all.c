@@ -31,19 +31,19 @@ void format_float(char *separator, va_list args)
 }
 
 /**
- * format_str - check str formats
+ * format_string - check str formats
  * @separator: the str separator
  * @args: args ptr
 */
-void format_str(char *separator, va_list args)
+void format_string(char *separator, va_list args)
 {
 	char *str = va_arg(args, char *);
 
 	switch ((int)(!str))
-		case 1:
-			str = "(nil)";
-
-	printf("%s%s", separator, str);
+	case 1:
+		str = "(nil)";
+		printf("%s%s", separator, str);
+		break;
 }
 
 /**
@@ -60,7 +60,7 @@ void print_all(const char * const format, ...)
 		{"c", format_char},
 		{"i", format_int},
 		{"f", format_float},
-		{"s", format_str},
+		{"s", format_string},
 		{NULL, NULL}
 	};
 
