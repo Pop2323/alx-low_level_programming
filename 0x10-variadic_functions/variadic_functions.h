@@ -5,12 +5,12 @@
 #include <stdio.h>
 
 /**
- * struct token - struct token
+ * struct token_t - struct token
  * @token: types of args passed to the func
  * @f: The function associated
 */
 
-typedef struct token
+typedef struct token_t
 {
 	char *token;
 	int (*f)(char *, va_list);
