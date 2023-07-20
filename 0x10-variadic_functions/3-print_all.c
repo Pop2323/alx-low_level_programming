@@ -8,7 +8,7 @@
 */
 void check_char(char *separator, va_list args)
 {
-	printf("%s%s", separator, va_arg(args, int));
+	printf("%s%c", separator, va_arg(args, int));
 }
 
 /**
