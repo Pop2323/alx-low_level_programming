@@ -5,9 +5,8 @@
 #include <stdio.h>
 
 /**
- * struct variadic - struct variadic
- *
- * @variadic: types of args passed to the func
+ * struct token - struct token
+ * @token: types of args passed to the func
  * @f: The function associated
 */
 

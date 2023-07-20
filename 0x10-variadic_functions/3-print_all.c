@@ -43,10 +43,6 @@ void format_string(char *separator, va_list args)
 	case 1:
 		str = "(nil)";
 		printf("%s%s", separator, str);
-		break;
-	default:
-		printf("%s%s", separator, str);
-		break;
 }
 
 /**
