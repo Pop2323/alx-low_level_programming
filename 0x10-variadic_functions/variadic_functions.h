@@ -11,11 +11,11 @@
  * @f: The function associated
 */
 
-typedef struct variadic
+typedef struct token
 {
-	char *variadic;
+	char *token;
 	int (*f)(char *, va_list);
-} variadic_t;
+} token_t;
 
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);

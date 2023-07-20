@@ -60,7 +60,7 @@ void print_all(const char * const format, ...)
 	int i = 0, j;
 	char *separator = "";
 	va_list args;
-	variadic_t variadics[] = {
+	token_t tokens[] = {
 		{"c", format_char},
 		{"i", format_int},
 		{"f", format_float},
@@ -73,11 +73,11 @@ void print_all(const char * const format, ...)
 	while (format && format[i])
 	{
 		j = 0;
-		while (variadics[j].variadic)
+		while (tokens[j].token)
 		{
-			if (format[i] == variadics[j].variadic[0])
+			if (format[i] == tokens[j].token[0])
 			{
-				variadics[j].f(separator, args);
+				tokens[j].f(separator, args);
 				separator = ", ";
 			}
 			j++;
