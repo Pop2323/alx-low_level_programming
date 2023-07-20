@@ -46,7 +46,7 @@ void format_str(char *separator, va_list args)
 	switch ((int)(!str))
 	{
 		case 1:
-			str = "(nail)";
+			str = "(nil)";
 			printf(("%s%s"), separator, str);
 	}
 }
@@ -61,7 +61,6 @@ void print_all(const char * const format, ...)
 	int i = 0, j;
 	char *separator = "";
 	va_list args;
-
 	variadic_t variadics[] = {
 		{"c", format_char},
 		{"i", format_int},
@@ -71,6 +70,7 @@ void print_all(const char * const format, ...)
 	};
 
 	va_start(args, format);
+
 	while (format && format[i])
 	{
 		j = 0;
