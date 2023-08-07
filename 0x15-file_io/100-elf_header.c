@@ -73,9 +73,9 @@ int main(int argc, char *argv[])
 			print_error("Failed to read ELF header");
 		}
 		if (header.e_ident[EI_MAG0] != ELFMAG0 ||
-				header.e_ident[EI_MAG1] != ELFMAG1 ||
-				header.e_ident[EI_MAG2] != ELFMAG2 ||
-				header.e_ident[EI_MAG3] != ELFMAG3)
+		    header.e_ident[EI_MAG1] != ELFMAG1 ||
+		    header.e_ident[EI_MAG2] != ELFMAG2 ||
+		    header.e_ident[EI_MAG3] != ELFMAG3)
 		{
 			print_error("Not an ELF file");
 		}
