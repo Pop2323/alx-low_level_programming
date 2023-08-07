@@ -9,10 +9,10 @@
 /**
  * main - program that cp the content of a file to another file.
  *
- * @argc:  indicates how many arguments (arg count).
- * @argv: an arr of pointers to arrs of char objects.
+ * @argc: indicates how many arguments (arg count).
+ * @argv: an array of pointers to arrays of char objects.
  *
- * Return: return 1 if success or 0 on failure.
+ * Return: Returns 1 if success or 0 on failure.
 */
 int main(int argc, char *argv[])
 {
@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 	char *file_from, *file_to;
 
 	if (argc != 3)
-		dprintf(STDERR_FILENO, USAGE), exit(97);
+		dprintf(STDERR_FILENO, "%s", USAGE), exit(97);
 	file_from = argv[1];
 	file_to = argv[2];
 	fd_from = open(file_from, O_RDONLY);
@@ -34,8 +34,8 @@ int main(int argc, char *argv[])
 	while ((bytes = read(fd_from, buffer, BUFFER_SIZE)) > 0)
 		if (write(fd_to, buffer, bytes) != bytes)
 			dprintf(STDERR_FILENO, ERROR_WRITE, file_to), exit(99);
-	fd_from = close(fd_from);
-	fd_to = close(fd_to);
+	if (bytes == -1)
+		dprintf(STDERR_FILENO, ERROR_READ, file_from), exit(98);
 	if (close(fd_from))
 		dprintf(STDERR_FILENO, ERROR_CLOSE, fd_from), exit(100);
 	if (close(fd_to))
