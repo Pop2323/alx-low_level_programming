@@ -53,7 +53,9 @@ int main(int argc, char *argv[])
 {
 	char *filenam;
 	int fd;
-	ssize_t bytes_r;
+	ssize_t bytes_read;
+	Elf64_Ehdr header;
+
 
 		if (argc != 2)
 		{
@@ -65,9 +67,7 @@ int main(int argc, char *argv[])
 		{
 			print_error("Failed to open the file");
 		}
-		Elf64_Ehdr header;
-
-		bytes_r = read(fd, &header, sizeof(header));
+		bytes_read = read(fd, &header, sizeof(header));
 		if (bytes_r != sizeof(header))
 		{
 			print_error("Failed to read ELF header");
@@ -75,10 +75,11 @@ int main(int argc, char *argv[])
 		if (header.e_ident[EI_MAG0] != ELFMAG0 ||
 				header.e_ident[EI_MAG1] != ELFMAG1 ||
 				header.e_ident[EI_MAG2] != ELFMAG2 ||
-				header.e_ident[EI_MAG3] != ELFMAG3) {
+				header.e_ident[EI_MAG3] != ELFMAG3)
+		{
 			print_error("Not an ELF file");
 		}
-		display_elf_h(&header);
+		display_elf_header(&header);
 		close(fd);
 		return (0);
 }
