@@ -19,8 +19,8 @@ int main(int argc, char *argv[])
 	int fd_from = 0, fd_to = 0;
 	char buffer[BUFFER_SIZE];
 	ssize_t bytes;
-	const char *file_from = argv[1];
-	const char *file_to = argv[2];
+	char *file_from = argv[1];
+	char *file_to = argv[2];
 
 	if (argc != 3)
 		dprintf(STDERR_FILENO, USAGE), exit(97);
