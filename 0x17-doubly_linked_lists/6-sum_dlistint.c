@@ -7,7 +7,7 @@
  *
  * Return: return the value of calc
 */
-int sum_dlistint(dlistint_t *head);
+int sum_dlistint(dlistint_t *head)
 {
 	int calc = 0;
 
@@ -17,7 +17,7 @@ int sum_dlistint(dlistint_t *head);
 			head = head->prev;
 		while (head != NULL)
 		{
-			calc = calc + head->n;
+			calc += head->n;
 			head = head->next;
 		}
 	}
