@@ -1,40 +1,43 @@
 #ifndef SEARCH_ALGOS
 #define SEARCH_ALGOS
+
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
 
 /**
  * struct listint_s - singly linked list
- * 
+ *
  * @n: Data of the node.
  * @index: Index of the node in the list
  * @next: Pointer to the next node in the skip list.
+ *
+ * Description: singly linked list node structure
 */
 typedef struct listint_s
 {
-    int n;
-    size_t index;
-    struct listint_s *next;
+	int n;
+	size_t index;
+	struct listint_s *next;
 } listint_t;
 
 
 /**
- * struct skiplist_s - Singly linked list with an express lane
- * 
+ * struct skiplist_t - Singly linked list with an express lane
+ *
  * @n: Data of the node.
  * @index: Index of the node in the list
  * @next: Pointer to the next node in the skip list.
  * @express: Pointer to the express lane node in the skip list.
- * 
- * Description: singly linked list node structure with an express lane
+ *
+ * Description: singly linked list node structure
  */
 typedef struct skiplist_t
 {
-    int n;
-    size_t index;
-    struct skiplist_t *next;
-    struct skiplist_t *express;
+	int n;
+	size_t index;
+	struct skiplist_t *next;
+	struct skiplist_t *express;
 } skiplist_t;
 
 int linear_search(int *array, size_t size, int value);
